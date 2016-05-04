@@ -20,3 +20,12 @@ Vec2& Vec2::operator *= (float v){
 	x=x*v;
 	y=y*v;
 }
+Vec2& Vec2::operator /= (float v){
+	if(v == 0){
+		std::cout <<"durch null teilt man nicht!" << std::endl;
+		
+	}
+	x=x/v;
+	y=y/v;
+
+}

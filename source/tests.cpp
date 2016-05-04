@@ -59,6 +59,28 @@ TEST_CASE("vector multiplikation","*="){
 	REQUIRE(v3.y == 0.0);
 
 }
+
+TEST_CASE("vector division","/="){
+
+	Vec2 v1{1.0,1.0};
+	Vec2 v2(1.5,1.5);
+	Vec2 v3;
+	Vec2 v4{2.5,2.5};
+	v1 /= 1.0;
+	v2 /= -2.0;
+	v3 /= 123456789.0;
+	v4 /= 0.0;
+	REQUIRE(v1.x == 1.0);
+	REQUIRE(v1.y == 1.0);
+	REQUIRE(v2.x == -0.75);
+	REQUIRE(v2.y == -0.75);
+	REQUIRE(v3.x == 0.0);
+	REQUIRE(v3.y == 0.0);
+	REQUIRE(v4.y != 2.5);
+	REQUIRE(v4.y != 2.5);
+
+
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
