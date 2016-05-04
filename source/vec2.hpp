@@ -10,7 +10,7 @@ class Vec2{
 	Vec2();
 	Vec2& operator += (Vec2 const& v);
 	Vec2& operator -= (Vec2 const& v);
-//	Vec2& operator *=(float v);
+	Vec2& operator *=(float v);
 //	Vec2& operator /=(float v);
 
 	float x;

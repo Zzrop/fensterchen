@@ -15,3 +15,8 @@ Vec2& Vec2::operator -= (Vec2 const& v){
 	x=x-v.x;
 	y=y-v.y;
 }
+
+Vec2& Vec2::operator *= (float v){
+	x=x*v;
+	y=y*v;
+}
