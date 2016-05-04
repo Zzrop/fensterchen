@@ -28,6 +28,20 @@ TEST_CASE("vectoraddition","+="){
 	REQUIRE(v2.y == 0.0);
 
 }
+
+TEST_CASE("vectorsubtraktion","-="){
+
+	Vec2 v1{1.0,1.0};
+	Vec2 v2(1.5,1.5);
+	Vec2 v3(0.75,-1.5);
+	v1 -= v2;
+	v2 -= v3;
+	REQUIRE(v1.x == -0.5);
+	REQUIRE(v1.y == -0.5);
+	REQUIRE(v2.x == 0.75);
+	REQUIRE(v2.y == 3.0);
+
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
