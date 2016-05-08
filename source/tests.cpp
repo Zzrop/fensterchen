@@ -86,13 +86,63 @@ TEST_CASE("vector +","+"){
 	Vec2 v1{1.0,1.0};
 	Vec2 v2(1.5,1.5);
 	Vec2 v3 = v1+v2;
+	Vec2 v5(-1.0,-1.0);
 	REQUIRE(v3.x == 2.5);
 	REQUIRE(v3.y == 2.5);
-
-
+	Vec2 v4 = v1+v5;
+	REQUIRE(v4.x == 0.0);
+	REQUIRE(v4.y == 0.0);	
 
 }
 
+TEST_CASE("vector -","-"){
+
+	Vec2 v1{1.0,1.0};
+	Vec2 v2(1.5,1.5);
+	Vec2 v3 = v1-v2;
+	Vec2 v5(-1.0,-1.0);
+	REQUIRE(v3.x == -0.5);
+	REQUIRE(v3.y == -0.5);
+	Vec2 v4 = v1-v5;
+	REQUIRE(v4.x == 2.0);
+	REQUIRE(v4.y == 2.0);	
+
+}
+TEST_CASE("vector *","*"){
+
+	Vec2 v1{1.0,1.0};
+	Vec2 v2(1.5,1.5);
+	Vec2 v3 = v1*-0.5;
+	Vec2 v4 = v2*0.0;
+	REQUIRE(v3.x == -0.5);
+	REQUIRE(v3.y == -0.5);	
+	REQUIRE(v4.x == 0.0);
+	REQUIRE(v4.y == 0.0);	
+}
+TEST_CASE("vector /","/"){
+
+	Vec2 v1{1.0,1.0};
+	Vec2 v2(2.0,2.0);
+	Vec2 v3 = v1/0.5;
+	Vec2 v5(-1.0,-1.0);
+	REQUIRE(v3.x == 2.0);
+	REQUIRE(v3.y == 2.0);
+	Vec2 v4 = v1/2.0;
+	REQUIRE(v4.x == 0.5);
+	REQUIRE(v4.y == 0.5);	
+
+}
+TEST_CASE("s vector *","s*"){
+
+	Vec2 v1{1.0,1.0};
+	Vec2 v2(1.5,1.5);
+	Vec2 v3 = -0.5*v1;
+	Vec2 v4 = 0.0*v2;
+	REQUIRE(v3.x == -0.5);
+	REQUIRE(v3.y == -0.5);	
+	REQUIRE(v4.x == 0.0);
+	REQUIRE(v4.y == 0.0);	
+}
 TEST_CASE("mat2","standart"){
 	Mat2 m1;
 	Mat2 m2{1.0,2.0,3.0,4.0};
