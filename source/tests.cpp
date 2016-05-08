@@ -183,6 +183,14 @@ TEST_CASE("mat2 mult 2","mat2 *"){
 
 
 }
+TEST_CASE("mat2 determinante","det()"){
+	Mat2 m1(1.0,1.0,1.0,1.0);
+	Mat2 m2{1.0,2.0,3.0,4.0};
+	REQUIRE(m1.det() == 0.0);
+	REQUIRE(m2.det() == -2.0);
+
+
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

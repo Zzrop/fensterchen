@@ -7,6 +7,7 @@ public:
 	Mat2(float a1, float b1, float c1, float d1);
 	Mat2();
 
+	float det() const;
 	float a;
 	float b;
 	float c;
