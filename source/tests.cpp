@@ -159,11 +159,27 @@ TEST_CASE("mat2","standart"){
 TEST_CASE("mat2 mult","mat2 *="){
 	Mat2 m1(1.0,1.0,1.0,1.0);
 	Mat2 m2{1.0,2.0,3.0,4.0};
+	Mat2 m3{-0.5,0.0,-0.5,1.0};
 	m1*=m2;
+	m2*=m3;
 	REQUIRE(m1.a == 4.0);
 	REQUIRE(m1.b == 6.0);
 	REQUIRE(m1.c == 4.0);
 	REQUIRE(m1.d == 6.0);
+	REQUIRE(m2.a == -1.5);
+	REQUIRE(m2.b == 2.0);
+	REQUIRE(m2.c == -3.5);
+	REQUIRE(m2.d == 4.0);
+
+}
+TEST_CASE("mat2 mult 2","mat2 *"){
+	Mat2 m1(1.0,1.0,1.0,1.0);
+	Mat2 m2{1.0,2.0,3.0,4.0};
+	Mat2 m3 =m1*m2;
+	REQUIRE(m3.a == 4.0);
+	REQUIRE(m3.b == 6.0);
+	REQUIRE(m3.c == 4.0);
+	REQUIRE(m3.d == 6.0);
 
 
 }

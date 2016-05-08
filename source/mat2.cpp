@@ -12,3 +12,8 @@ Mat2& Mat2::operator*=(Mat2 const& m){
 	c=m1.c;
 	d=m1.d;
 }
+
+Mat2 operator * (Mat2 const& m1, Mat2 const& m2){
+	Mat2 m3(m1.a*m2.a+m1.b*m2.c,m1.a*m2.b+m1.b*m2.d,m1.c*m2.a+m1.d*m2.c,m1.c*m2.b+m1.d*m2.d);
+	return m3;
+}
