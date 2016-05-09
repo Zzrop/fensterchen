@@ -225,6 +225,15 @@ TEST_CASE("vec2 * mat2","vec*mat"){
 	REQUIRE(m3.d == -0.5);
 
 }*/
+	TEST_CASE("mat2 trans","transpose"){
+	Mat2 m2(1.0,2.0,3.0,4.0);
+	Mat2 m1=transpose(m2);
+	REQUIRE(m1.a == 1.0);
+	REQUIRE(m1.b == 3.0);
+	REQUIRE(m1.c == 2.0);
+	REQUIRE(m1.d == 4.0);
+
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

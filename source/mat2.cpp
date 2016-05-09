@@ -36,5 +36,8 @@ Vec2 operator *( Vec2 const& v, Mat2 const& m ){
 	Mat2 m1 = {(1.0/m1.a)-((m1.b/m1.a)*-m.c*1.0/m.a)/(m.d-m.c*m.b/m.a),-(m.b/m.a)*1.0/(m.d-m.c*m.b/m.a),-m.c*1.0/m.a/(m.d-m.c*m.b/m.a), 1.0/(m.d-m.c*m.b/m.a)};
 	return m1;
 }*/
-Mat2 transpose ( Mat2 const & m );
+Mat2 transpose ( Mat2 const & m ){
+	Mat2 m1{m.a,m.c,m.b,m.d};
+	return m1;
+}
 Mat2 make_rotation_mat2(float phi);
