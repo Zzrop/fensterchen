@@ -4,6 +4,8 @@
 #include "mat2.hpp"
 #include <math.h>
 #include "color.hpp"
+#include "rectangle.hpp"
+#include "circle.hpp"
 
 TEST_CASE("vector","x,y"){
 

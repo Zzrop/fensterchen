@@ -1,5 +1,5 @@
-# ifndef BUW_COLOR_HPP
-# define BUW_COLOR_HPP
+# ifndef COLOR_HPP
+# define COLOR_HPP
 
 struct Color
 {
