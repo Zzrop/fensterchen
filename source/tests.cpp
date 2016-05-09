@@ -203,6 +203,28 @@ TEST_CASE("mat2 * vec2","mat*vec"){
 	REQUIRE(v3.y == 11.0);
 
 }
+TEST_CASE("vec2 * mat2","vec*mat"){
+	Mat2 m1(1.0,1.0,1.0,1.0);
+	Mat2 m2(1.0,2.0,3.0,4.0);
+	Vec2 v1{1.0,2.0};
+	Vec2 v2=v1*m1;
+	Vec2 v3=v1*m2;
+	REQUIRE(v2.x == 3.0);
+	REQUIRE(v2.y == 3.0);
+	REQUIRE(v3.x == 5.0);
+	REQUIRE(v3.y == 11.0);
+
+}
+/*TEST_CASE("mat2 inv","inv()"){
+	Mat2 m1(1.0,1.0,1.0,1.0);
+	Mat2 m2(1.0,2.0,3.0,4.0);
+	Mat2 m3 = inverse(m2);
+	REQUIRE(m3.a == -2.0);
+	REQUIRE(m3.b == 1.0);
+	REQUIRE(m3.c == 1.5);
+	REQUIRE(m3.d == -0.5);
+
+}*/
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

@@ -27,7 +27,14 @@ Vec2 operator * ( Mat2 const& m, Vec2 const& v ){
 	return v1;
 }
 
-Vec2 operator *( Vec2 const& v, Mat2 const& m );
-Mat2 inverse ( Mat2 const& m );
+Vec2 operator *( Vec2 const& v, Mat2 const& m ){
+	Vec2 v1(m.a*v.x+m.b*v.y,m.c*v.x+m.d*v.y);
+	return v1;	
+}
+
+/*Mat2 inverse( Mat2 const& m ){
+	Mat2 m1 = {(1.0/m1.a)-((m1.b/m1.a)*-m.c*1.0/m.a)/(m.d-m.c*m.b/m.a),-(m.b/m.a)*1.0/(m.d-m.c*m.b/m.a),-m.c*1.0/m.a/(m.d-m.c*m.b/m.a), 1.0/(m.d-m.c*m.b/m.a)};
+	return m1;
+}*/
 Mat2 transpose ( Mat2 const & m );
 Mat2 make_rotation_mat2(float phi);
