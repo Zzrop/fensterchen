@@ -3,6 +3,7 @@
 #include "vec2.hpp"
 #include "mat2.hpp"
 #include <math.h>
+#include "color.hpp"
 
 TEST_CASE("vector","x,y"){
 
@@ -246,6 +247,16 @@ TEST_CASE("vec2 * mat2","vec*mat"){
 	REQUIRE(v2.x == Approx(0.0));
 	REQUIRE(v2.y == Approx(-1.0));
 
+}
+	TEST_CASE("color","color"){
+	Color black{0.0};
+	REQUIRE(black.r == 0.0);
+	REQUIRE(black.g == 0.0);
+	REQUIRE(black.b == 0.0);
+	Color red{1.0,0.0,0.0};
+	REQUIRE(red.r == 1.0);
+	REQUIRE(red.g == 0.0);
+	REQUIRE(red.b == 0.0);
 }
 int main(int argc, char *argv[])
 {
