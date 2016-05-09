@@ -2,6 +2,7 @@
 #include <catch.hpp>
 #include "vec2.hpp"
 #include "mat2.hpp"
+#include <math.h>
 
 TEST_CASE("vector","x,y"){
 
@@ -232,6 +233,18 @@ TEST_CASE("vec2 * mat2","vec*mat"){
 	REQUIRE(m1.b == 3.0);
 	REQUIRE(m1.c == 2.0);
 	REQUIRE(m1.d == 4.0);
+
+}
+	TEST_CASE("mat2 dreh","rotate"){
+	Vec2 v{1.0,0.0};
+	Mat2 m1=make_rotation_mat2(0.5*M_PI);
+	Vec2 v1=v*m1;
+	REQUIRE(v1.x == Approx(0.0));
+	REQUIRE(v1.y == 1.0);
+	Mat2 m2=transpose(m1);
+	Vec2 v2 =v*m2;
+	REQUIRE(v2.x == Approx(0.0));
+	REQUIRE(v2.y == Approx(-1.0));
 
 }
 int main(int argc, char *argv[])
