@@ -191,6 +191,18 @@ TEST_CASE("mat2 determinante","det()"){
 
 
 }
+TEST_CASE("mat2 * vec2","mat*vec"){
+	Mat2 m1(1.0,1.0,1.0,1.0);
+	Mat2 m2(1.0,2.0,3.0,4.0);
+	Vec2 v1{1.0,2.0};
+	Vec2 v2=m1*v1;
+	Vec2 v3=m2*v1;
+	REQUIRE(v2.x == 3.0);
+	REQUIRE(v2.y == 3.0);
+	REQUIRE(v3.x == 5.0);
+	REQUIRE(v3.y == 11.0);
+
+}
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

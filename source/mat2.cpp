@@ -21,3 +21,13 @@ Mat2 operator * (Mat2 const& m1, Mat2 const& m2){
 	Mat2 m3(m1.a*m2.a+m1.b*m2.c,m1.a*m2.b+m1.b*m2.d,m1.c*m2.a+m1.d*m2.c,m1.c*m2.b+m1.d*m2.d);
 	return m3;
 }
+
+Vec2 operator * ( Mat2 const& m, Vec2 const& v ){
+	Vec2 v1(m.a*v.x+m.b*v.y,m.c*v.x+m.d*v.y);
+	return v1;
+}
+
+Vec2 operator *( Vec2 const& v, Mat2 const& m );
+Mat2 inverse ( Mat2 const& m );
+Mat2 transpose ( Mat2 const & m );
+Mat2 make_rotation_mat2(float phi);
