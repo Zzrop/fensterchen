@@ -252,6 +252,7 @@ TEST_CASE("vec2 * mat2","vec*mat"){
 }
 	TEST_CASE("color","color"){
 	Color black{0.0};
+
 	REQUIRE(black.r == 0.0);
 	REQUIRE(black.g == 0.0);
 	REQUIRE(black.b == 0.0);
@@ -259,6 +260,40 @@ TEST_CASE("vec2 * mat2","vec*mat"){
 	REQUIRE(red.r == 1.0);
 	REQUIRE(red.g == 0.0);
 	REQUIRE(red.b == 0.0);
+}
+	TEST_CASE("Circle","circle konstruktoren"){
+	Color black{0.0};
+	Circle c1{1.0,1.0,1.0,black};
+	REQUIRE(c1.x() == 1.0);
+	REQUIRE(c1.y() == 1.0);
+	REQUIRE(c1.r() == 1.0);
+	REQUIRE(c1.Circumference() == 2*M_PI);
+	Circle c2{2.0};
+	REQUIRE(c2.x() == 0.0);
+	REQUIRE(c2.y() == 0.0);
+	REQUIRE(c2.r() == 2.0);
+	REQUIRE(c2.Circumference() == 4*M_PI);
+}
+	TEST_CASE("rectangle","rectangle konstruktoren"){
+	Color black{0.0};
+	Rectangle r1{1.0,1.0,1.0,1.0,black};
+	REQUIRE(r1.x() == 1.0);
+	REQUIRE(r1.y() == 1.0);
+	REQUIRE(r1.a() == 1.0);
+	REQUIRE(r1.b() == 1.0);
+	REQUIRE(r1.Circumference() == 4.0);
+	Rectangle r2;
+	REQUIRE(r2.x() == 0.0);
+	REQUIRE(r2.y() == 0.0);
+	REQUIRE(r2.a() == 1.0);
+	REQUIRE(r2.b() == 1.0);
+	REQUIRE(r2.Circumference() == 4.0);
+	Rectangle r3{-1.0,-1.0,2.0,2.0};
+	REQUIRE(r3.x() == -1.0);
+	REQUIRE(r3.y() == -1.0);
+	REQUIRE(r3.a() == 2.0);
+	REQUIRE(r3.b() == 2.0);
+	REQUIRE(r3.Circumference() == 8.0);	
 }
 int main(int argc, char *argv[])
 {

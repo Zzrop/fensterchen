@@ -9,6 +9,7 @@ class Rectangle
 public:
 	Rectangle(float x,float y, double a, double b);
 	Rectangle(float x, float y, double a, double b, Color const& c);
+	Rectangle();
 	~Rectangle();
 
 	void draw (Window const&);

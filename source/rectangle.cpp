@@ -7,6 +7,10 @@
 
 	Rectangle::Rectangle(float x, float y, double a, double b, Color const& c) :
 	x_{x},y_{y}, a_{a}, b_{b}, color_{c}{}
+	Rectangle::Rectangle(float x, float y, double a, double b) :
+	x_{x},y_{y}, a_{a}, b_{b}, color_{0.0}{}	
+	Rectangle::Rectangle() :
+	x_{0.0},y_{0.0}, a_{1.0}, b_{1.0}, color_{0.0}{}
 	Rectangle::~Rectangle() {}
 	
 	void Rectangle::draw(Window const& win)
